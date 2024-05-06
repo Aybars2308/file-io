@@ -1,0 +1,3 @@
+Veri İngilzce adıyla Data,sayısal yada sayısal olmayan formlarda(biçimlerde) ifadelerdir. 
+Veri kullanım amacına göre araştırmalardan. deneylerden, gözlemlerden ve internet gibi ortamlarda elde edilir.
+Veri en basit tanımıyla bilgi parçacığı olarak bilinir.
