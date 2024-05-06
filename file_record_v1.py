@@ -24,13 +24,19 @@ def kayitlari_goster(dosya_yolu):
 
 def kayit_sil(ad_soyad, dosya_yolu):
     try:
-        with open(dosya_yolu, 'r') as dosya:
-            satirlar = dosya.readlines()
-        with open(dosya_yolu, 'w') as dosya:
-            for satir in satirlar:
-                if ad_soyad not in satir:
-                    dosya.write(satir)
-        print(f"{ad_soyad} adlı kişinin kaydı başarıyla silindi!")
+        with open(dosya_yolu, 'r') as dosya: # kullanacağımız dosyayı okuma modunda aç
+            satirlar = dosya.readlines() # bütün satırları oku ve satirlar değişkenşne ata
+        with open(dosya_yolu, 'w') as dosya: #dosyayı yazama modunda aç
+            silindi = False
+            for satir in satirlar: # kaydedilen satırlar arasında dolaş
+                if ad_soyad not in satir: # eğer istenilen ad soyad mevcut olamayan bir satıra denk gelinirse
+                    dosya.write(satir) # dosyanın boş olan satrını yazınız.
+                else:
+                    silindi=True
+            if silindi:
+                print(f"{ad_soyad} adlı kişinin kaydı başarıyla silindi!")
+            else:
+                print(f"hata")
     except FileNotFoundError:
         print("Kayıt dosyası bulunamadı")
                  
