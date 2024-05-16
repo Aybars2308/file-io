@@ -99,6 +99,7 @@ customtkinter.set_default_color_theme("green")  # Themes: "blue" (standard), "gr
 class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
+        self.inventory_list=[]
 
         # configure window
         self.title("Human Record")
@@ -224,7 +225,7 @@ class App(customtkinter.CTk):
 
         self.inventory_treeview.delete(*self.inventory_treeview.get_children())
 
-        file_name = 'inventory.csv'
+        file_name = 'kayitlar.csv'
 
         # Check if the file exists, and create it if it doesn't
         if not os.path.exists(file_name):
@@ -236,7 +237,7 @@ class App(customtkinter.CTk):
                 self.inventory_treeview.insert('', 'end', values=row, iid=f'I{i}')
                 self.inventory_list.append(list(row))
 
-    def edit_item(self):
+    def edit_record(self):
         self.selected_index = self.inventory_treeview.selection()
 
         if not self.selected_index:
@@ -375,7 +376,7 @@ class App(customtkinter.CTk):
 
     def reload_records(self):
         self.inventory_treeview.delete(*self.inventory_treeview.get_children())
-        with open('records.csv', 'r') as file:
+        with open('kayitlar.csv', 'r') as file:
             reader = csv.reader(file)
             for row in reader:
                 self.inventory_treeview.insert('', 'end', values=row)
