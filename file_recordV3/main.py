@@ -115,7 +115,7 @@ class App(customtkinter.CTk):
         self.sidebar_frame.grid_rowconfigure(4, weight=1)
         self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="MediaMarkt", font=customtkinter.CTkFont(size=40, weight="bold", slant="italic"))
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
-        self.sidebar_Ekle = customtkinter.CTkButton(self.sidebar_frame, text="Ekle", command=self.add_record)
+        self.sidebar_Ekle = customtkinter.CTkButton(self.sidebar_frame, text="Ekle", command=self.add_people)
         self.sidebar_Ekle.grid(row=1, column=0, padx=20, pady=10)
         self.sidebar_Düzenle = customtkinter.CTkButton(self.sidebar_frame, text="Düzenle", command=self.edit_record)
         self.sidebar_Düzenle.grid(row=2, column=0, padx=20, pady=10)
